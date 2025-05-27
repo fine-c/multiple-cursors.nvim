@@ -311,6 +311,20 @@ opts = {
 }
 ```
 
+### Swapping `j` and `k`
+
+The `j` and `k` keys can be swapped similar to an [alternative keyboard layout](#alternative-keyboard-layouts):
+
+```lua
+opts = {
+  custom_key_maps = {
+    -- Swap j and k
+    {{"n", "x"}, "j", function() require("multiple-cursors.normal_mode.motion").k() end, "nowrap"},
+    {{"n", "x"}, "k", function() require("multiple-cursors.normal_mode.motion").j() end, "nowrap"},
+  }
+}
+```
+
 ## Plugin compatibility
 
 Plugin functions can be used from [custom key maps](#custom_key_maps).
