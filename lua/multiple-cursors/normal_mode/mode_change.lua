@@ -4,6 +4,7 @@ local common = require("multiple-cursors.common")
 local virtual_cursors = require("multiple-cursors.virtual_cursors")
 local insert_mode_nonprinting = require("multiple-cursors.insert_mode.nonprinting")
 local input = require("multiple-cursors.input")
+local vscode_cursors = require("multiple-cursors.vscode_cursors")
 
 local mode_cmd = nil
 
@@ -29,6 +30,7 @@ local function _i()
   virtual_cursors.visit_all(function(vc)
     vc.curswant = -1
   end)
+  vscode_cursors.sync_all_cursors_to_vscode()
 end
 
 local function _I()
