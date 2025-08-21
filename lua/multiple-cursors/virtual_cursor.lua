@@ -182,4 +182,11 @@ function VirtualCursor:set_register(register)
 
 end
 
+function VirtualCursor:to_range(offset)
+  return {
+    start = { line = self.lnum + offset, character = self.col + offset },
+    ["end"] = { line = self.lnum + offset, character = self.col + offset },
+  }
+end
+
 return VirtualCursor
